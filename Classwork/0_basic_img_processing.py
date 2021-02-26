@@ -31,8 +31,8 @@ ax[1, 1].set_xlabel("Gaussian filtering, with sigma = 25")
 # add title to the figure
 fig.suptitle("Gaussian filtering to blur image")
 
-# show the image
-plt.show()
-
 # save the figure
 plt.savefig('plots/0_gaussian_filter_on_raccoon.png')
+
+# show the image
+plt.show()
