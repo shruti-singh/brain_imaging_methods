@@ -25,8 +25,8 @@ ax[1, 1].imshow(very_blurred_face)
 # add labels to the subplots
 ax[0, 0].set_xlabel("Original face iamge")
 ax[0, 1].set_xlabel("Face image: First color channel")
-ax[1, 0].set_xlabel("sigma = 5")
-ax[1, 1].set_xlabel("sigma = 25")
+ax[1, 0].set_xlabel("Gaussian filtering, with sigma = 5")
+ax[1, 1].set_xlabel("Gaussian filtering, with sigma = 25")
 
 # add title to the figure
 fig.suptitle("Gaussian filtering to blur image")
@@ -35,4 +35,4 @@ fig.suptitle("Gaussian filtering to blur image")
 plt.show()
 
 # save the figure
-plt.savefig('plots/gaussian_filter_on_face.png')
+plt.savefig('plots/0_gaussian_filter_on_raccoon.png')
