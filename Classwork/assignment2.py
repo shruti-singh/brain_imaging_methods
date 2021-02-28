@@ -66,6 +66,9 @@ for _, (fr, be, patch) in enumerate(zip(freq, bins, patches)):
         plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+4000)) 
 plt.title("Histogram with 16 bins")
 
+# Add title to the figure
+fig.suptitle("Histogram of the original brain image")
+
 # Save the figure and display on screen
 plt.savefig('./plots/a2/hist_org_brain.png', dpi=200)
 plt.show()
@@ -85,6 +88,7 @@ for sigma in sigma_values:
     plt.imshow(smoothed_image, cmap="Greys_r")
     plt.title(r"Smoothed image with $\sigma$ = {}".format(sigma))
     plt.savefig("./plots/a2/smoothed_img_sigma_{}.png".format(sigma), dpi=200)
+    plt.show()
 
     # Initialize a 10x5 plot
     fig = plt.figure(figsize=(15, 20))
@@ -107,6 +111,9 @@ for sigma in sigma_values:
         else:
             plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+4000)) 
     plt.title(r"Histogram of smoothed image with $\sigma$ = {} with 16 bins".format(sigma))
+
+    # Title of the figure
+    fig.suptitle("Histogram of the gaussian filtered image")
 
     # Save and display on screen
     plt.savefig("./plots/a2/hist_smoothed_sigma_{}.png".format(sigma), dpi=200)
