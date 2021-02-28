@@ -68,7 +68,7 @@ plt.title("Histogram with 16 bins")
 
 # Save the figure and display on screen
 plt.savefig('./plots/a2/hist_org_brain.png', dpi=200)
-# plt.show()
+plt.show()
 
 
 # ========================================================================================================================
@@ -90,7 +90,7 @@ for sigma in sigma_values:
     fig = plt.figure(figsize=(15, 20))
 
     plt.subplot(121)
-    freq, bins, patches = plt.hist(smoothed_image.ravel(), bins=list(range(0, 256)), edgecolor='black')
+    freq, bins, patches = plt.hist(smoothed_image.ravel(), bins=list(range(0, 256)))
     plt.xlabel('Pixel Intensity bins')
     plt.ylabel('Frequency')
     plt.title(r"Histogram of smoothed image with $\sigma$ = {} with 256 bins".format(sigma))
@@ -108,7 +108,9 @@ for sigma in sigma_values:
             plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+4000)) 
     plt.title(r"Histogram of smoothed image with $\sigma$ = {} with 16 bins".format(sigma))
 
+    # Save and display on screen
     plt.savefig("./plots/a2/hist_smoothed_sigma_{}.png".format(sigma), dpi=200)
+    plt.show()
 
     print(r"Pixel values for smoothed image with $\sigma$ = ", sigma)
     print("Max pixel value {} by {} pixels.".format(np.max(smoothed_image), np.count_nonzero(smoothed_image==np.max(smoothed_image))))
