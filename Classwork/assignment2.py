@@ -65,3 +65,43 @@ plt.title("Histogram with 16 bins")
 # Save the figure and display on screen
 plt.savefig('./plots/a2/hist_org_brain.png', dpi=500)
 plt.show()
+
+
+# ========================================================================================================================
+# Plot histogram of the smoothed images
+# ========================================================================================================================
+
+sigma_values = [5, 10, 20, 30, 40, 50]
+
+for sigma in sigma_values:
+    smoothed_image = ndimage.gaussian_filter(brain_image, sigma=sigma)
+
+    # Initialize a 5x5 plot for the smoothed image
+    fig = plt.figure(figsize=(5, 5))
+    plt.imshow(smoothed_image, cmap="Greys_r")
+    plt.title(r"Smoothed image with $\sigma$ = {}".format(sigma))
+    plt.savefig("./plots/a2/smoothed_img_sigma_{}.png".format(sigma), dpi=500)
+
+    # Initialize a 10x5 plot
+    fig = plt.figure(figsize=(16, 16))
+
+    plt.subplot(211)
+    freq, bins, patches = plt.hist(smoothed_image.ravel(), bins=list(range(0, 256)), edgecolor='black')
+    plt.xlabel('Pixel Intensity bins')
+    plt.ylabel('Frequency')
+    plt.title(r"Histogram of smoothed image with $\sigma$ = {} with 256 bins".format(sigma))
+
+    plt.subplot(212)
+    freq, bins, patches = plt.hist(smoothed_image.ravel(), bins=16, edgecolor='black')
+    plt.xlabel('Pixel Intensity bins')
+    plt.ylabel('Frequency')
+    # Annotate the frequency of each bin
+    for fr, be, patch in zip(freq, bins, patches):
+        plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+1000)) 
+    plt.title(r"Histogram of smoothed image with $\sigma$ = {} with 16 bins".format(sigma))
+
+    plt.savefig("./plots/a2/hist_smoothed_sigma_{}.png".format(sigma), dpi=500)
+
+    print(r"Pixel values for smoothed image with $\sigma$ = ", sigma)
+    print("Max pixel value {} by {} pixels.".format(np.max(smoothed_image), np.count_nonzero(smoothed_image==np.max(smoothed_image))))
+    print("Min pixel value {} by {} pixels.\n".format(np.min(smoothed_image), np.count_nonzero(smoothed_image==np.min(smoothed_image))))
