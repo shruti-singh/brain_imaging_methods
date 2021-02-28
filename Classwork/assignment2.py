@@ -43,7 +43,7 @@ print("Min pixel value {} by {} pixels.\n".format(np.min(brain_image), np.count_
 # ========================================================================================================================
 
 # Initialize a 16x16 plot
-fig = plt.figure(figsize=(15, 20))
+fig = plt.figure(figsize=(12, 6))
 
 
 # First subplot in the 2x1 figure
@@ -53,7 +53,7 @@ plt.subplot(121)
 plt.hist(brain_image.ravel(), bins=list(range(0, 256)))
 plt.xlabel('Pixel Intensity bins')
 plt.ylabel('Frequency')
-plt.title("Histogram with 256 bins, one bin for each intensity value")
+plt.title("256 bins")
 
 
 # Second subplot in the 2x1 figure
@@ -68,11 +68,11 @@ plt.ylabel('Frequency')
 for _, (fr, be, patch) in enumerate(zip(freq, bins, patches)):
     # To fix overlapping of freq labels
     if _ % 2 == 0:
-        plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+1000)) 
+        plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+3000), fontsize=8) 
     else:
-        plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+4000)) 
+        plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+10000), fontsize=8) 
 
-plt.title("Histogram with 16 bins")
+plt.title("16 bins")
 
 # Add title to the figure
 fig.suptitle("Histogram of the original brain image")
@@ -93,7 +93,7 @@ for sigma in sigma_values:
     smoothed_image = ndimage.gaussian_filter(brain_image, sigma=sigma)
 
     # Initialize a 5x5 plot for the smoothed image
-    fig = plt.figure(figsize=(5, 5))
+    fig = plt.figure(figsize=(3, 3))
 
     # Plot the gaussian filtered brain image
     plt.imshow(smoothed_image, cmap="Greys_r")
@@ -103,14 +103,14 @@ for sigma in sigma_values:
 
 
     # Initialize a 10x5 plot
-    fig = plt.figure(figsize=(15, 20))
+    fig = plt.figure(figsize=(12, 6))
 
     # Plot the histogram with 256 bins
     plt.subplot(121)
     freq, bins, patches = plt.hist(smoothed_image.ravel(), bins=list(range(0, 256)))
     plt.xlabel('Pixel Intensity bins')
     plt.ylabel('Frequency')
-    plt.title(r"Histogram of smoothed image with $\sigma$ = {} with 256 bins".format(sigma))
+    plt.title(r"$\sigma$ = {} with 256 bins".format(sigma))
 
 
     # Plot the histogram with 16 bins
@@ -123,15 +123,15 @@ for sigma in sigma_values:
     for _, (fr, be, patch) in enumerate(zip(freq, bins, patches)):
         # To fix overlapping of freq labels
         if _ % 2 == 0:
-            plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+1000)) 
+            plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+3000), fontsize=8) 
         else:
-            plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+4000)) 
+            plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+10000), fontsize=8) 
 
-    plt.title(r"Histogram of smoothed image with $\sigma$ = {} with 16 bins".format(sigma))
+    plt.title(r"$\sigma$ = {} with 16 bins".format(sigma))
 
 
     # Title of the figure
-    fig.suptitle("Histogram of the gaussian filtered image")
+    fig.suptitle(r"Histogram of the gaussian filtered image $\sigma$ = {}".format(sigma))
 
     # Save and display on screen
     plt.savefig("./plots/a2/hist_smoothed_sigma_{}.png".format(sigma), dpi=200)
@@ -142,3 +142,20 @@ for sigma in sigma_values:
     print(r"Pixel values for smoothed image with $\sigma$ = ", sigma)
     print("Max pixel value {} by {} pixels.".format(np.max(smoothed_image), np.count_nonzero(smoothed_image==np.max(smoothed_image))))
     print("Min pixel value {} by {} pixels.\n".format(np.min(smoothed_image), np.count_nonzero(smoothed_image==np.min(smoothed_image))))
+
+
+
+# ========================================================================================================================
+# Obtain edges and sharp features in the image
+# ========================================================================================================================
+
+plt.clf()
+smoothed_image = ndimage.gaussian_filter(brain_image, sigma=5)
+fig = plt.figure(figsize=(3, 3))
+plt.imshow(np.subtract(brain_image, smoothed_image), cmap="Greys_r")
+plt.savefig("./plots/a2/sharp_features_5.png")
+
+smoothed_image = ndimage.gaussian_filter(brain_image, sigma=50)
+fig = plt.figure(figsize=(3, 3))
+plt.imshow(np.subtract(brain_image, smoothed_image), cmap="Greys_r")
+plt.savefig("./plots/a2/sharp_features_50.png")
