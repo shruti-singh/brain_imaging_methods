@@ -58,8 +58,12 @@ freq, bins, patches = plt.hist(brain_image.ravel(), bins=16, edgecolor='black')
 plt.xlabel('Pixel Intensity bins')
 plt.ylabel('Frequency')
 # Annotate the frequency of each bin
-for fr, be, patch in zip(freq, bins, patches):
-    plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+1000)) 
+for _, (fr, be, patch) in enumerate(zip(freq, bins, patches)):
+    # To fix overlapping of freq labels
+    if _ % 2 == 0:
+        plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+1000)) 
+    else:
+        plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+4000)) 
 plt.title("Histogram with 16 bins")
 
 # Save the figure and display on screen
@@ -96,8 +100,12 @@ for sigma in sigma_values:
     plt.xlabel('Pixel Intensity bins')
     plt.ylabel('Frequency')
     # Annotate the frequency of each bin
-    for fr, be, patch in zip(freq, bins, patches):
-        plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+1000)) 
+    for _, (fr, be, patch) in enumerate(zip(freq, bins, patches)):
+        # To fix overlapping of freq labels
+        if _ % 2 == 0:
+            plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+1000)) 
+        else:
+            plt.annotate("{}".format(int(fr)), xy=(be, int(fr)+4000)) 
     plt.title(r"Histogram of smoothed image with $\sigma$ = {} with 16 bins".format(sigma))
 
     plt.savefig("./plots/a2/hist_smoothed_sigma_{}.png".format(sigma), dpi=200)
