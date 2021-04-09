@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2021.1.3),
-    on Fri 09 Apr 2021 06:48:42 AM IST
+    on Fri 09 Apr 2021 06:59:24 AM IST
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -84,7 +84,7 @@ defaultKeyboard = keyboard.Keyboard()
 trialClock = core.Clock()
 en_w1 = visual.TextBox2(
      win, text='', font='Open Sans',
-     pos=(0, 0),     letterHeight=0.05,
+     pos=(0, 0),     letterHeight=0.1,
      size=None, borderWidth=2.0,
      color='white', colorSpace='rgb',
      opacity=None,
@@ -100,7 +100,7 @@ en_w1 = visual.TextBox2(
 )
 en_w2 = visual.TextBox2(
      win, text='', font='Open Sans',
-     pos=(0, 0),     letterHeight=0.05,
+     pos=(0, 0),     letterHeight=0.1,
      size=None, borderWidth=2.0,
      color='white', colorSpace='rgb',
      opacity=None,
@@ -176,42 +176,26 @@ for thisEn_trial in en_trials:
         # update/draw components on each frame
         
         # *en_w1* updates
-        if en_w1.status == NOT_STARTED and tThisFlip >= 0.5-frameTolerance:
+        if en_w1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
             en_w1.frameNStart = frameN  # exact frame index
             en_w1.tStart = t  # local t and not account for scr refresh
             en_w1.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(en_w1, 'tStartRefresh')  # time at next scr refresh
             en_w1.setAutoDraw(True)
-        if en_w1.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > en_w1.tStartRefresh + 0.6-frameTolerance:
-                # keep track of stop time/frame for later
-                en_w1.tStop = t  # not accounting for scr refresh
-                en_w1.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(en_w1, 'tStopRefresh')  # time at next scr refresh
-                en_w1.setAutoDraw(False)
         
         # *en_w2* updates
-        if en_w2.status == NOT_STARTED and tThisFlip >= 0.5-frameTolerance:
+        if en_w2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
             en_w2.frameNStart = frameN  # exact frame index
             en_w2.tStart = t  # local t and not account for scr refresh
             en_w2.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(en_w2, 'tStartRefresh')  # time at next scr refresh
             en_w2.setAutoDraw(True)
-        if en_w2.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > en_w2.tStartRefresh + 0.6-frameTolerance:
-                # keep track of stop time/frame for later
-                en_w2.tStop = t  # not accounting for scr refresh
-                en_w2.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(en_w2, 'tStopRefresh')  # time at next scr refresh
-                en_w2.setAutoDraw(False)
         
         # *enkbresp* updates
         waitOnFlip = False
-        if enkbresp.status == NOT_STARTED and tThisFlip >= 0.5-frameTolerance:
+        if enkbresp.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
             enkbresp.frameNStart = frameN  # exact frame index
             enkbresp.tStart = t  # local t and not account for scr refresh
