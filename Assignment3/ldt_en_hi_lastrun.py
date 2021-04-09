@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2021.1.3),
-    on Fri 09 Apr 2021 08:28:43 AM IST
+    on Fri 09 Apr 2021 08:37:50 AM IST
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -160,9 +160,13 @@ startexpprompt = visual.TextBox2(
 )
 startexpkbresp = keyboard.Keyboard()
 
+# Initialize components for Routine "rest"
+restClock = core.Clock()
+restresp = keyboard.Keyboard()
+
 # Initialize components for Routine "trial"
 trialClock = core.Clock()
-en_w1 = visual.TextBox2(
+entrialw1 = visual.TextBox2(
      win, text='', font='Open Sans',
      pos=(0, 0),     letterHeight=0.1,
      size=None, borderWidth=2.0,
@@ -175,10 +179,10 @@ en_w1 = visual.TextBox2(
      fillColor=None, borderColor=None,
      flipHoriz=False, flipVert=False,
      editable=False,
-     name='en_w1',
+     name='entrialw1',
      autoLog=True,
 )
-en_w2 = visual.TextBox2(
+entrialw2 = visual.TextBox2(
      win, text='', font='Open Sans',
      pos=(0, 0),     letterHeight=0.1,
      size=None, borderWidth=2.0,
@@ -191,7 +195,7 @@ en_w2 = visual.TextBox2(
      fillColor=None, borderColor=None,
      flipHoriz=False, flipVert=False,
      editable=False,
-     name='en_w2',
+     name='entrialw2',
      autoLog=True,
 )
 enkbresp = keyboard.Keyboard()
@@ -373,7 +377,7 @@ for thisEnwarmuptrial in enwarmuptrials:
             enwarmupw1.setAutoDraw(True)
         if enwarmupw1.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > enwarmupw1.tStartRefresh + 0.6-frameTolerance:
+            if tThisFlipGlobal > enwarmupw1.tStartRefresh + 0.8-frameTolerance:
                 # keep track of stop time/frame for later
                 enwarmupw1.tStop = t  # not accounting for scr refresh
                 enwarmupw1.frameNStop = frameN  # exact frame index
@@ -390,7 +394,7 @@ for thisEnwarmuptrial in enwarmuptrials:
             enwarmupw2.setAutoDraw(True)
         if enwarmupw2.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > enwarmupw2.tStartRefresh + 0.6-frameTolerance:
+            if tThisFlipGlobal > enwarmupw2.tStartRefresh + 0.8-frameTolerance:
                 # keep track of stop time/frame for later
                 enwarmupw2.tStop = t  # not accounting for scr refresh
                 enwarmupw2.frameNStop = frameN  # exact frame index
@@ -658,10 +662,102 @@ thisExp.nextEntry()
 # the Routine "startexp" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
+# ------Prepare to start Routine "rest"-------
+continueRoutine = True
+routineTimer.add(1.000000)
+# update component parameters for each repeat
+restresp.keys = []
+restresp.rt = []
+_restresp_allKeys = []
+# keep track of which components have finished
+restComponents = [restresp]
+for thisComponent in restComponents:
+    thisComponent.tStart = None
+    thisComponent.tStop = None
+    thisComponent.tStartRefresh = None
+    thisComponent.tStopRefresh = None
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+# reset timers
+t = 0
+_timeToFirstFrame = win.getFutureFlipTime(clock="now")
+restClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+frameN = -1
+
+# -------Run Routine "rest"-------
+while continueRoutine and routineTimer.getTime() > 0:
+    # get current time
+    t = restClock.getTime()
+    tThisFlip = win.getFutureFlipTime(clock=restClock)
+    tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *restresp* updates
+    waitOnFlip = False
+    if restresp.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        restresp.frameNStart = frameN  # exact frame index
+        restresp.tStart = t  # local t and not account for scr refresh
+        restresp.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(restresp, 'tStartRefresh')  # time at next scr refresh
+        restresp.status = STARTED
+        # keyboard checking is just starting
+        waitOnFlip = True
+        win.callOnFlip(restresp.clock.reset)  # t=0 on next screen flip
+        win.callOnFlip(restresp.clearEvents, eventType='keyboard')  # clear events on next screen flip
+    if restresp.status == STARTED:
+        # is it time to stop? (based on global clock, using actual start)
+        if tThisFlipGlobal > restresp.tStartRefresh + 1.0-frameTolerance:
+            # keep track of stop time/frame for later
+            restresp.tStop = t  # not accounting for scr refresh
+            restresp.frameNStop = frameN  # exact frame index
+            win.timeOnFlip(restresp, 'tStopRefresh')  # time at next scr refresh
+            restresp.status = FINISHED
+    if restresp.status == STARTED and not waitOnFlip:
+        theseKeys = restresp.getKeys(keyList=None, waitRelease=False)
+        _restresp_allKeys.extend(theseKeys)
+        if len(_restresp_allKeys):
+            restresp.keys = _restresp_allKeys[-1].name  # just the last key pressed
+            restresp.rt = _restresp_allKeys[-1].rt
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in restComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "rest"-------
+for thisComponent in restComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+# check responses
+if restresp.keys in ['', [], None]:  # No response was made
+    restresp.keys = None
+thisExp.addData('restresp.keys',restresp.keys)
+if restresp.keys != None:  # we had a response
+    thisExp.addData('restresp.rt', restresp.rt)
+thisExp.addData('restresp.started', restresp.tStartRefresh)
+thisExp.addData('restresp.stopped', restresp.tStopRefresh)
+thisExp.nextEntry()
+
 # set up handler to look after randomisation of conditions etc
 en_trials = data.TrialHandler(nReps=2.0, method='random', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('conditions.xlsx'),
+    trialList=data.importConditions('dataset/en_conditions.xlsx'),
     seed=None, name='en_trials')
 thisExp.addLoop(en_trials)  # add the loop to the experiment
 thisEn_trial = en_trials.trialList[0]  # so we can initialise stimuli with some values
@@ -680,13 +776,13 @@ for thisEn_trial in en_trials:
     # ------Prepare to start Routine "trial"-------
     continueRoutine = True
     # update component parameters for each repeat
-    en_w1.setText(word1)
-    en_w2.setText(word2)
+    entrialw1.setText(word1)
+    entrialw2.setText(word2)
     enkbresp.keys = []
     enkbresp.rt = []
     _enkbresp_allKeys = []
     # keep track of which components have finished
-    trialComponents = [en_w1, en_w2, enkbresp]
+    trialComponents = [entrialw1, entrialw2, enkbresp]
     for thisComponent in trialComponents:
         thisComponent.tStart = None
         thisComponent.tStop = None
@@ -709,23 +805,39 @@ for thisEn_trial in en_trials:
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *en_w1* updates
-        if en_w1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # *entrialw1* updates
+        if entrialw1.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
-            en_w1.frameNStart = frameN  # exact frame index
-            en_w1.tStart = t  # local t and not account for scr refresh
-            en_w1.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(en_w1, 'tStartRefresh')  # time at next scr refresh
-            en_w1.setAutoDraw(True)
+            entrialw1.frameNStart = frameN  # exact frame index
+            entrialw1.tStart = t  # local t and not account for scr refresh
+            entrialw1.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(entrialw1, 'tStartRefresh')  # time at next scr refresh
+            entrialw1.setAutoDraw(True)
+        if entrialw1.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > entrialw1.tStartRefresh + 0.8-frameTolerance:
+                # keep track of stop time/frame for later
+                entrialw1.tStop = t  # not accounting for scr refresh
+                entrialw1.frameNStop = frameN  # exact frame index
+                win.timeOnFlip(entrialw1, 'tStopRefresh')  # time at next scr refresh
+                entrialw1.setAutoDraw(False)
         
-        # *en_w2* updates
-        if en_w2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # *entrialw2* updates
+        if entrialw2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
             # keep track of start time/frame for later
-            en_w2.frameNStart = frameN  # exact frame index
-            en_w2.tStart = t  # local t and not account for scr refresh
-            en_w2.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(en_w2, 'tStartRefresh')  # time at next scr refresh
-            en_w2.setAutoDraw(True)
+            entrialw2.frameNStart = frameN  # exact frame index
+            entrialw2.tStart = t  # local t and not account for scr refresh
+            entrialw2.tStartRefresh = tThisFlipGlobal  # on global time
+            win.timeOnFlip(entrialw2, 'tStartRefresh')  # time at next scr refresh
+            entrialw2.setAutoDraw(True)
+        if entrialw2.status == STARTED:
+            # is it time to stop? (based on global clock, using actual start)
+            if tThisFlipGlobal > entrialw2.tStartRefresh + 0.8-frameTolerance:
+                # keep track of stop time/frame for later
+                entrialw2.tStop = t  # not accounting for scr refresh
+                entrialw2.frameNStop = frameN  # exact frame index
+                win.timeOnFlip(entrialw2, 'tStopRefresh')  # time at next scr refresh
+                entrialw2.setAutoDraw(False)
         
         # *enkbresp* updates
         waitOnFlip = False
@@ -775,10 +887,10 @@ for thisEn_trial in en_trials:
     for thisComponent in trialComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    en_trials.addData('en_w1.started', en_w1.tStartRefresh)
-    en_trials.addData('en_w1.stopped', en_w1.tStopRefresh)
-    en_trials.addData('en_w2.started', en_w2.tStartRefresh)
-    en_trials.addData('en_w2.stopped', en_w2.tStopRefresh)
+    en_trials.addData('entrialw1.started', entrialw1.tStartRefresh)
+    en_trials.addData('entrialw1.stopped', entrialw1.tStopRefresh)
+    en_trials.addData('entrialw2.started', entrialw2.tStartRefresh)
+    en_trials.addData('entrialw2.stopped', entrialw2.tStopRefresh)
     # check responses
     if enkbresp.keys in ['', [], None]:  # No response was made
         enkbresp.keys = None
