@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2021.1.3),
-    on Fri 09 Apr 2021 12:51:31 PM IST
+    on Fri 09 Apr 2021 01:14:46 PM IST
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -918,7 +918,7 @@ thisExp.addData('restresp.stopped', restresp.tStopRefresh)
 thisExp.nextEntry()
 
 # set up handler to look after randomisation of conditions etc
-en_trials = data.TrialHandler(nReps=1.0, method='random', 
+en_trials = data.TrialHandler(nReps=2.0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('dataset/en_conditions.xlsx'),
     seed=None, name='en_trials')
@@ -1148,7 +1148,7 @@ for thisEn_trial in en_trials:
     en_trials.addData('restresp.stopped', restresp.tStopRefresh)
     thisExp.nextEntry()
     
-# completed 1.0 repeats of 'en_trials'
+# completed 2.0 repeats of 'en_trials'
 
 
 # ------Prepare to start Routine "hi_instr"-------
@@ -1590,7 +1590,7 @@ thisExp.nextEntry()
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-hi_trials = data.TrialHandler(nReps=1.0, method='random', 
+hi_trials = data.TrialHandler(nReps=2.0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('dataset/hi_conditions.xlsx'),
     seed=None, name='hi_trials')
@@ -1820,7 +1820,7 @@ for thisHi_trial in hi_trials:
     hi_trials.addData('restresp.stopped', restresp.tStopRefresh)
     thisExp.nextEntry()
     
-# completed 1.0 repeats of 'hi_trials'
+# completed 2.0 repeats of 'hi_trials'
 
 
 # ------Prepare to start Routine "hique"-------
