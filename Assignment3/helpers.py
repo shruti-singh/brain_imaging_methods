@@ -4,7 +4,7 @@ import pandas as pd
 def replace_vowels(word):
     replacement_map = {'a': 'u', 'e': 'i', 'i': 'a', 'o': 'e', 'u': 'o'}
     
-    # Record positions of vowels and corresponding vowel
+    # Record positions of vowels and corresponding vowel. Will use this for replacement later.
     modifications = {}
     for vw in replacement_map:
         if word.lower().find(vw) > -1:
@@ -19,7 +19,7 @@ def replace_vowels(word):
 def random_word_perturbation(word, single_char=False):
 
     if single_char:
-        # Randomly change only one char in word
+        # Randomly change only one char in word.
         pos = np.random.randint(0, len(word))
         char = np.random.randint(97, 123)
         word = word[0:pos] + chr(char) + word[pos+1:]
@@ -51,10 +51,13 @@ def create_en_non_words(word_list):
 
 
 def random_hindi_word_perturbation(word):
+
+    # if len <=4 (which includes the matras in hindi), only del one char randomly. We avoid deleting the first char to make the word look meaningful.
     if len(word) <= 4:
         pos = np.random.randint(1, len(word))
         word = word[:pos] + word[pos+1:]
     else:
+        # Remove 1/4th of the chars
         size = len(word)//4
         for i in range(size):
             pos = np.random.randint(1, len(word))
