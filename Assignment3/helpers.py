@@ -80,7 +80,7 @@ if __name__ == "__main__":
         en_words = ['accept', 'actor', 'addition', 'africa', 'annoy', 'answer', 'arms', 'arrow', 'beard', 'beer', 'believe', 'bicycle', 'book', 'bored', 'broccoli', 'brother', 'builder', 'cancer', 'carpet', 'chalk', 'clay', 'cook', 'cop', 'crab', 'devil', 'atom', 'attic', 'average', 'ax', 'backpack', 'ballet', 'bar', 'base', 'beat', 'beautiful', 'begin', 'beginner', 'belt', 'bitch', 'blame', 'blanket', 'blow', 'blue', 'blush', 'REJECT', 'ACTRESS', 'SUBTRACTION', 'CONTINENT', 'FRUSTRATE', 'EXPLANATION', 'OCTOPUS', 'BOW', 'MUSTACHE', 'MUG', 'DISBELIEVE', 'TRICYCLE', 'MAGAZINE', 'BUSY', 'CAULIFLOWER', 'SISTER', 'CONTRACTOR', 'TUMOR', 'RUG', 'BLACKBOARD', 'POTTERY', 'KITCHEN', 'POLICEMAN', 'LOBSTER', 'VALUABLE', 'DISOWN', 'CAPABILITY', 'PERFORM', 'ACTOR', 'ADVERB', 'SUGGEST', 'CONTRACT', 'AWARENESS', 'DISALLOW', 'QUANTITY', 'ENTERTAIN', 'FURY', 'ANTEATER', 'SEEM', 'REGION', 'DISAGREEMENT', 'CRICKET', 'ASH', 'INQUIRE']
         en_non_words = create_en_non_words(en_words)
 
-        with open("en_non_words.txt", "w") as f:
+        with open("dataset/en_non_words.txt", "w") as f:
             for i in en_non_words:
                 f.write(i + "\n")
     else:
