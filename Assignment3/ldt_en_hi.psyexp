@@ -201,9 +201,172 @@
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
       </KeyboardComponent>
     </Routine>
+    <Routine name="en_warmup">
+      <TextboxComponent name="enwarmupw1">
+        <Param name="anchor" updates="constant" val="top-center" valType="str"/>
+        <Param name="autoLog" updates="constant" val="True" valType="bool"/>
+        <Param name="bold" updates="constant" val="False" valType="bool"/>
+        <Param name="borderColor" updates="constant" val="None" valType="color"/>
+        <Param name="borderWidth" updates="constant" val="2" valType="num"/>
+        <Param name="color" updates="constant" val="white" valType="color"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="num"/>
+        <Param name="editable" updates="constant" val="False" valType="bool"/>
+        <Param name="fillColor" updates="constant" val="None" valType="color"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
+        <Param name="italic" updates="constant" val="False" valType="bool"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="num"/>
+        <Param name="lineSpacing" updates="constant" val="1.0" valType="num"/>
+        <Param name="name" updates="None" val="enwarmupw1" valType="code"/>
+        <Param name="opacity" updates="constant" val="" valType="num"/>
+        <Param name="ori" updates="constant" val="0" valType="num"/>
+        <Param name="padding" updates="constant" val="" valType="num"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="" valType="list"/>
+        <Param name="startEstim" updates="None" val="" valType="num"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="num"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="0.6" valType="num"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every repeat" val="$w_word1" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </TextboxComponent>
+      <TextboxComponent name="enwarmupw2">
+        <Param name="anchor" updates="constant" val="bottom-center" valType="str"/>
+        <Param name="autoLog" updates="constant" val="True" valType="bool"/>
+        <Param name="bold" updates="constant" val="False" valType="bool"/>
+        <Param name="borderColor" updates="constant" val="None" valType="color"/>
+        <Param name="borderWidth" updates="constant" val="2" valType="num"/>
+        <Param name="color" updates="constant" val="white" valType="color"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="num"/>
+        <Param name="editable" updates="constant" val="False" valType="bool"/>
+        <Param name="fillColor" updates="constant" val="None" valType="color"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
+        <Param name="italic" updates="constant" val="False" valType="bool"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="num"/>
+        <Param name="lineSpacing" updates="constant" val="1.0" valType="num"/>
+        <Param name="name" updates="None" val="enwarmupw2" valType="code"/>
+        <Param name="opacity" updates="constant" val="" valType="num"/>
+        <Param name="ori" updates="constant" val="0" valType="num"/>
+        <Param name="padding" updates="constant" val="" valType="num"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="" valType="list"/>
+        <Param name="startEstim" updates="None" val="" valType="num"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="num"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="0.6" valType="num"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every repeat" val="$w_word2" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </TextboxComponent>
+      <KeyboardComponent name="enwarmupkb">
+        <Param name="allowedKeys" updates="constant" val="'left','right'" valType="list"/>
+        <Param name="correctAns" updates="constant" val="$w_corrAns" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="num"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="enwarmupkb" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="num"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="num"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="num"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="startexp">
+      <TextboxComponent name="startexpprompt">
+        <Param name="anchor" updates="constant" val="top-center" valType="str"/>
+        <Param name="autoLog" updates="constant" val="True" valType="bool"/>
+        <Param name="bold" updates="constant" val="False" valType="bool"/>
+        <Param name="borderColor" updates="constant" val="None" valType="color"/>
+        <Param name="borderWidth" updates="constant" val="2" valType="num"/>
+        <Param name="color" updates="constant" val="white" valType="color"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="num"/>
+        <Param name="editable" updates="constant" val="False" valType="bool"/>
+        <Param name="fillColor" updates="constant" val="None" valType="color"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="font" updates="constant" val="Open Sans" valType="str"/>
+        <Param name="italic" updates="constant" val="False" valType="bool"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="num"/>
+        <Param name="lineSpacing" updates="constant" val="1.0" valType="num"/>
+        <Param name="name" updates="None" val="startexpprompt" valType="code"/>
+        <Param name="opacity" updates="constant" val="" valType="num"/>
+        <Param name="ori" updates="constant" val="0" valType="num"/>
+        <Param name="padding" updates="constant" val="" valType="num"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="list"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="size" updates="constant" val="" valType="list"/>
+        <Param name="startEstim" updates="None" val="" valType="num"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="num"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="num"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Press left/right arrow key to start the experiment." valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </TextboxComponent>
+      <KeyboardComponent name="startexpkbresp">
+        <Param name="allowedKeys" updates="constant" val="'left','right'" valType="list"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="num"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="startexpkbresp" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="num"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="num"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="num"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="instr"/>
+    <LoopInitiator loopType="TrialHandler" name="enwarmuptrials">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('w_word1', 'whistle'), ('w_word2', 'england'), ('w_corrAns', 'right'), ('w_category', 2)]), OrderedDict([('w_word1', 'ash'), ('w_word2', 'ashtray'), ('w_corrAns', 'right'), ('w_category', 1)]), OrderedDict([('w_word1', 'fite'), ('w_word2', 'crack'), ('w_corrAns', 'left'), ('w_category', 4)]), OrderedDict([('w_word1', 'sun'), ('w_word2', 'cepy'), ('w_corrAns', 'left'), ('w_category', 5)]), OrderedDict([('w_word1', 'mick'), ('w_word2', 'lofy'), ('w_corrAns', 'left'), ('w_category', 3)])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="dataset/en_warmupconditions.csv" valType="file"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="name" updates="None" val="enwarmuptrials" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="en_warmup"/>
+    <Routine name="rest"/>
+    <LoopTerminator name="enwarmuptrials"/>
+    <Routine name="startexp"/>
     <LoopInitiator loopType="TrialHandler" name="en_trials">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="[{'word1': 'actress', 'word2': 'actor', 'corrAns': 'right', 'category': 1}, {'word1': 'subtraction', 'word2': 'addition', 'corrAns': 'right', 'category': 1}, {'word1': 'continent', 'word2': 'africa', 'corrAns': 'right', 'category': 1}, {'word1': 'explanation', 'word2': 'answer', 'corrAns': 'right', 'category': 1}, {'word1': 'octopus', 'word2': 'arms', 'corrAns': 'right', 'category': 1}, {'word1': 'bow', 'word2': 'arrow', 'corrAns': 'right', 'category': 1}, {'word1': 'mustache', 'word2': 'beard', 'corrAns': 'right', 'category': 1}, {'word1': 'mug', 'word2': 'beer', 'corrAns': 'right', 'category': 1}, {'word1': 'disbelieve', 'word2': 'believe', 'corrAns': 'right', 'category': 1}, {'word1': 'tricycle', 'word2': 'bicycle', 'corrAns': 'right', 'category': 1}, {'word1': 'magazine', 'word2': 'book', 'corrAns': 'right', 'category': 1}, {'word1': 'busy', 'word2': 'bored', 'corrAns': 'right', 'category': 1}, {'word1': 'cauliflower', 'word2': 'broccoli', 'corrAns': 'right', 'category': 1}, {'word1': 'sister', 'word2': 'brother', 'corrAns': 'right', 'category': 1}, {'word1': 'tumor', 'word2': 'cancer', 'corrAns': 'right', 'category': 1}, {'word1': 'rug', 'word2': 'carpet', 'corrAns': 'right', 'category': 1}, {'word1': 'blackboard', 'word2': 'chalk', 'corrAns': 'right', 'category': 1}, {'word1': 'kitchen', 'word2': 'cook', 'corrAns': 'right', 'category': 1}, {'word1': 'policeman', 'word2': 'cop', 'corrAns': 'right', 'category': 1}, {'word1': 'lobster', 'word2': 'crab', 'corrAns': 'right', 'category': 1}, {'word1': 'valuable', 'word2': 'devil', 'corrAns': 'right', 'category': 2}, {'word1': 'disown', 'word2': 'atom', 'corrAns': 'right', 'category': 2}, {'word1': 'capability', 'word2': 'attic', 'corrAns': 'right', 'category': 2}, {'word1': 'perform', 'word2': 'average', 'corrAns': 'right', 'category': 2}, {'word1': 'actor', 'word2': 'axe', 'corrAns': 'right', 'category': 2}, {'word1': 'adverb', 'word2': 'backpack', 'corrAns': 'right', 'category': 2}, {'word1': 'suggest', 'word2': 'ballet', 'corrAns': 'right', 'category': 2}, {'word1': 'contract', 'word2': 'bar', 'corrAns': 'right', 'category': 2}, {'word1': 'awareness', 'word2': 'base', 'corrAns': 'right', 'category': 2}, {'word1': 'disallow', 'word2': 'beat', 'corrAns': 'right', 'category': 2}, {'word1': 'quantity', 'word2': 'beautiful', 'corrAns': 'right', 'category': 2}, {'word1': 'entertain', 'word2': 'begin', 'corrAns': 'right', 'category': 2}, {'word1': 'fury', 'word2': 'beginner', 'corrAns': 'right', 'category': 2}, {'word1': 'anteater', 'word2': 'belt', 'corrAns': 'right', 'category': 2}, {'word1': 'seem', 'word2': 'bitch', 'corrAns': 'right', 'category': 2}, {'word1': 'region', 'word2': 'blame', 'corrAns': 'right', 'category': 2}, {'word1': 'disagreement', 'word2': 'blanket', 'corrAns': 'right', 'category': 2}, {'word1': 'cricket', 'word2': 'blow', 'corrAns': 'right', 'category': 2}, {'word1': 'ash', 'word2': 'blue', 'corrAns': 'right', 'category': 2}, {'word1': 'inquire', 'word2': 'blush', 'corrAns': 'right', 'category': 2}, {'word1': 'poldcemps', 'word2': 'uccipt', 'corrAns': 'left', 'category': 3}, {'word1': 'ltbster', 'word2': 'lecter', 'corrAns': 'left', 'category': 3}, {'word1': 'valuabzr', 'word2': 'additkos', 'corrAns': 'left', 'category': 3}, {'word1': 'dasewn', 'word2': 'ufraca', 'corrAns': 'left', 'category': 3}, {'word1': 'capmpiwity', 'word2': 'nney', 'corrAns': 'left', 'category': 3}, {'word1': 'perigrm', 'word2': 'unswir', 'corrAns': 'left', 'category': 3}, {'word1': 'ucter', 'word2': 'arks', 'corrAns': 'left', 'category': 3}, {'word1': 'udvirb', 'word2': 'prew', 'corrAns': 'left', 'category': 3}, {'word1': 'suggeyf', 'word2': 'biurd', 'corrAns': 'left', 'category': 3}, {'word1': 'contreqt', 'word2': 'bcer', 'corrAns': 'left', 'category': 3}, {'word1': 'awbxenems', 'word2': 'belvem', 'corrAns': 'left', 'category': 3}, {'word1': 'displfow', 'word2': 'pcycce', 'corrAns': 'left', 'category': 3}, {'word1': 'quantyta', 'word2': 'berid', 'corrAns': 'left', 'category': 3}, {'word1': 'entehvain', 'word2': 'bryccyli', 'corrAns': 'left', 'category': 3}, {'word1': 'angeatec', 'word2': 'hodker', 'corrAns': 'left', 'category': 3}, {'word1': 'suem', 'word2': 'builde', 'corrAns': 'left', 'category': 3}, {'word1': 'rigaen', 'word2': 'wuncir', 'corrAns': 'left', 'category': 3}, {'word1': 'dvsagceeieni', 'word2': 'turpit', 'corrAns': 'left', 'category': 3}, {'word1': 'crlceet', 'word2': 'chulk', 'corrAns': 'left', 'category': 3}, {'word1': 'incuire', 'word2': 'gway', 'corrAns': 'left', 'category': 3}, {'word1': 'invent', 'word2': 'ceok', 'corrAns': 'left', 'category': 5}, {'word1': 'inventor', 'word2': 'leab', 'corrAns': 'left', 'category': 5}, {'word1': 'uneven', 'word2': 'dival', 'corrAns': 'left', 'category': 5}, {'word1': 'snuggle', 'word2': 'atnton', 'corrAns': 'left', 'category': 5}, {'word1': 'saucer', 'word2': 'uttac', 'corrAns': 'left', 'category': 5}, {'word1': 'antidote', 'word2': 'averake', 'corrAns': 'left', 'category': 5}, {'word1': 'adorable', 'word2': 'bckpwck', 'corrAns': 'left', 'category': 5}, {'word1': 'ballet', 'word2': 'fgor', 'corrAns': 'left', 'category': 5}, {'word1': 'harmful', 'word2': 'cownr', 'corrAns': 'left', 'category': 5}, {'word1': 'adventure', 'word2': 'bnat', 'corrAns': 'left', 'category': 5}, {'word1': 'data', 'word2': 'beaufifsl', 'corrAns': 'left', 'category': 5}, {'word1': 'corpse', 'word2': 'bigan', 'corrAns': 'left', 'category': 5}, {'word1': 'mute', 'word2': 'bygknner', 'corrAns': 'left', 'category': 5}, {'word1': 'separate', 'word2': 'bext', 'corrAns': 'left', 'category': 5}, {'word1': 'deer', 'word2': 'blumi', 'corrAns': 'left', 'category': 5}, {'word1': 'cents', 'word2': 'rankep', 'corrAns': 'left', 'category': 5}, {'word1': 'finished', 'word2': 'blxw', 'corrAns': 'left', 'category': 5}, {'word1': 'pastry', 'word2': 'weue', 'corrAns': 'left', 'category': 5}, {'word1': 'heroine', 'word2': 'losh', 'corrAns': 'left', 'category': 5}, {'word1': 'confuse', 'word2': 'crtuain', 'corrAns': 'left', 'category': 5}, {'word1': 'riject', 'word2': 'farm', 'corrAns': 'left', 'category': 4}, {'word1': 'aczreis', 'word2': 'duty', 'corrAns': 'left', 'category': 4}, {'word1': 'stpactin', 'word2': 'fear', 'corrAns': 'left', 'category': 4}, {'word1': 'cowtnet', 'word2': 'freedom', 'corrAns': 'left', 'category': 4}, {'word1': 'frugtry', 'word2': 'cheat', 'corrAns': 'left', 'category': 4}, {'word1': 'exdlavstion', 'word2': 'cloth', 'corrAns': 'left', 'category': 4}, {'word1': 'ocbohus', 'word2': 'bitch', 'corrAns': 'left', 'category': 4}, {'word1': 'buws', 'word2': 'decide', 'corrAns': 'left', 'category': 4}, {'word1': 'mgstachi', 'word2': 'forest', 'corrAns': 'left', 'category': 4}, {'word1': 'imhge', 'word2': 'eyes', 'corrAns': 'left', 'category': 4}, {'word1': 'disbhvmeve', 'word2': 'destroy', 'corrAns': 'left', 'category': 4}, {'word1': 'mabapine', 'word2': 'environment', 'corrAns': 'left', 'category': 4}, {'word1': 'busg', 'word2': 'data', 'corrAns': 'left', 'category': 4}, {'word1': 'caklqblower', 'word2': 'fashion', 'corrAns': 'left', 'category': 4}, {'word1': 'sastir', 'word2': 'failure', 'corrAns': 'left', 'category': 4}, {'word1': 'rntractr', 'word2': 'fight', 'corrAns': 'left', 'category': 4}, {'word1': 'tomer', 'word2': 'elephant', 'corrAns': 'left', 'category': 4}, {'word1': 'blaokbonvd', 'word2': 'disagree', 'corrAns': 'left', 'category': 4}, {'word1': 'povtecy', 'word2': 'cup', 'corrAns': 'left', 'category': 4}, {'word1': 'ktcheken', 'word2': 'cotton', 'corrAns': 'left', 'category': 4}]" valType="str"/>
