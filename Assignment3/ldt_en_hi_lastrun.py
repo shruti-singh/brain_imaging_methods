@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2021.1.3),
-    on Fri 09 Apr 2021 08:37:50 AM IST
+    on Fri 09 Apr 2021 08:41:51 AM IST
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -203,6 +203,25 @@ enkbresp = keyboard.Keyboard()
 # Initialize components for Routine "rest"
 restClock = core.Clock()
 restresp = keyboard.Keyboard()
+
+# Initialize components for Routine "thanks"
+thanksClock = core.Clock()
+thankstext = visual.TextBox2(
+     win, text='Thank you for participating in the study! :)', font='Open Sans',
+     pos=(0, 0),     letterHeight=0.07,
+     size=None, borderWidth=2.0,
+     color='white', colorSpace='rgb',
+     opacity=None,
+     bold=False, italic=False,
+     lineSpacing=1.0,
+     padding=None,
+     anchor='center',
+     fillColor=None, borderColor=None,
+     flipHoriz=False, flipVert=False,
+     editable=False,
+     name='thankstext',
+     autoLog=True,
+)
 
 # Create some handy timers
 globalClock = core.Clock()  # to track the time since experiment started
@@ -1003,6 +1022,75 @@ for thisEn_trial in en_trials:
     
 # completed 2.0 repeats of 'en_trials'
 
+
+# ------Prepare to start Routine "thanks"-------
+continueRoutine = True
+routineTimer.add(5.000000)
+# update component parameters for each repeat
+# keep track of which components have finished
+thanksComponents = [thankstext]
+for thisComponent in thanksComponents:
+    thisComponent.tStart = None
+    thisComponent.tStop = None
+    thisComponent.tStartRefresh = None
+    thisComponent.tStopRefresh = None
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+# reset timers
+t = 0
+_timeToFirstFrame = win.getFutureFlipTime(clock="now")
+thanksClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+frameN = -1
+
+# -------Run Routine "thanks"-------
+while continueRoutine and routineTimer.getTime() > 0:
+    # get current time
+    t = thanksClock.getTime()
+    tThisFlip = win.getFutureFlipTime(clock=thanksClock)
+    tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *thankstext* updates
+    if thankstext.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        thankstext.frameNStart = frameN  # exact frame index
+        thankstext.tStart = t  # local t and not account for scr refresh
+        thankstext.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(thankstext, 'tStartRefresh')  # time at next scr refresh
+        thankstext.setAutoDraw(True)
+    if thankstext.status == STARTED:
+        # is it time to stop? (based on global clock, using actual start)
+        if tThisFlipGlobal > thankstext.tStartRefresh + 5.0-frameTolerance:
+            # keep track of stop time/frame for later
+            thankstext.tStop = t  # not accounting for scr refresh
+            thankstext.frameNStop = frameN  # exact frame index
+            win.timeOnFlip(thankstext, 'tStopRefresh')  # time at next scr refresh
+            thankstext.setAutoDraw(False)
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in thanksComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "thanks"-------
+for thisComponent in thanksComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+thisExp.addData('thankstext.started', thankstext.tStartRefresh)
+thisExp.addData('thankstext.stopped', thankstext.tStopRefresh)
 
 # Flip one final time so any remaining win.callOnFlip() 
 # and win.timeOnFlip() tasks get executed before quitting
