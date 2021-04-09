@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2021.1.3),
-    on Fri 09 Apr 2021 12:08:31 PM IST
+    on Fri 09 Apr 2021 12:41:02 PM IST
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -37,7 +37,7 @@ os.chdir(_thisDir)
 # Store info about the experiment session
 psychopyVersion = '2021.1.3'
 expName = 'ldt_en_hi'  # from the Builder filename that created this script
-expInfo = {'participant': '', 'session': '001'}
+expInfo = {'participant': '', 'age': '', 'gender': ''}
 dlg = gui.DlgFromDict(dictionary=expInfo, sortKeys=False, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -65,7 +65,7 @@ frameTolerance = 0.001  # how close to onset before 'same' frame
 
 # Setup the Window
 win = visual.Window(
-    size=(1024, 768), fullscr=True, screen=0, 
+    size=[1920, 1080], fullscr=True, screen=0, 
     winType='pyglet', allowGUI=False, allowStencil=False,
     monitor='testMonitor', color=[0,0,0], colorSpace='rgb',
     blendMode='avg', useFBO=True, 
@@ -83,7 +83,7 @@ defaultKeyboard = keyboard.Keyboard()
 # Initialize components for Routine "instr"
 instrClock = core.Clock()
 eninstrstim = visual.TextBox2(
-     win, text='Instructions:\n\nA pair of commonly used english words will be flashed on the screen. \nPress the right arrow key if both the words are valid english words. \nPress the left arrow key if either one of the words or both words are not valid english words.\n\nPress left/right keys to try out few examples.', font='Open Sans',
+     win, text='Instructions:\n\nA pair of commonly used english words will be flashed on the screen. \nPress the right arrow key if both the words are valid english words. \nPress the left arrow key if either one of the words or both words are not valid english words.\n\nPLEASE TRY TO ANSWER AS QUICKLY AND CORRECTLY AS POSSIBLE.\n\nPress left/right keys to try out few examples.', font='Open Sans',
      pos=(0, 0),     letterHeight=0.05,
      size=None, borderWidth=2.0,
      color='white', colorSpace='rgb',
@@ -207,7 +207,7 @@ restresp = keyboard.Keyboard()
 # Initialize components for Routine "hi_instr"
 hi_instrClock = core.Clock()
 hiinstrstim = visual.TextBox2(
-     win, text='Now, A pair of hindi-english word will be flashed on the screen. \nPress the right arrow key if both the words are valid words. \nPress the left arrow key if either one of the words or both words are not valid words.\n\nPress left/right keys to try out few examples.', font='Open Sans',
+     win, text='Now, A pair of hindi-english word will be flashed on the screen. \nPress the right arrow key if both the words are valid words. \nPress the left arrow key if either one of the words or both words are not valid words.\n\nPLEASE TRY TO ANSWER AS QUICKLY AND CORRECTLY AS POSSIBLE.\n\nPress left/right keys to try out few examples.', font='Open Sans',
      pos=(0, 0),     letterHeight=0.05,
      size=None, borderWidth=2.0,
      color='white', colorSpace='rgb',
@@ -235,7 +235,7 @@ hiwarmupw1 = visual.TextBox2(
      bold=False, italic=False,
      lineSpacing=1.0,
      padding=None,
-     anchor='top-center',
+     anchor='bottom-center',
      fillColor=None, borderColor=None,
      flipHoriz=False, flipVert=False,
      editable=False,
@@ -251,7 +251,7 @@ hiwarmupw2 = visual.TextBox2(
      bold=False, italic=False,
      lineSpacing=1.0,
      padding=None,
-     anchor='bottom-center',
+     anchor='top-center',
      fillColor=None, borderColor=None,
      flipHoriz=False, flipVert=False,
      editable=False,
@@ -295,7 +295,7 @@ hitrialw1 = visual.TextBox2(
      bold=False, italic=False,
      lineSpacing=1.0,
      padding=None,
-     anchor='top-center',
+     anchor='bottom-center',
      fillColor=None, borderColor=None,
      flipHoriz=False, flipVert=False,
      editable=False,
@@ -311,7 +311,7 @@ hitrialw2 = visual.TextBox2(
      bold=False, italic=False,
      lineSpacing=1.0,
      padding=None,
-     anchor='bottom-center',
+     anchor='top-center',
      fillColor=None, borderColor=None,
      flipHoriz=False, flipVert=False,
      editable=False,
@@ -323,6 +323,46 @@ hikbresp = keyboard.Keyboard()
 # Initialize components for Routine "rest"
 restClock = core.Clock()
 restresp = keyboard.Keyboard()
+
+# Initialize components for Routine "hique"
+hiqueClock = core.Clock()
+hiskill = visual.TextBox2(
+     win, text='Please rate your hindi reading skill on 0-5.', font='Open Sans',
+     pos=(0, 0),     letterHeight=0.1,
+     size=None, borderWidth=2.0,
+     color='white', colorSpace='rgb',
+     opacity=None,
+     bold=False, italic=False,
+     lineSpacing=1.0,
+     padding=None,
+     anchor='center',
+     fillColor=None, borderColor=None,
+     flipHoriz=False, flipVert=False,
+     editable=True,
+     name='hiskill',
+     autoLog=True,
+)
+hirespskill = keyboard.Keyboard()
+
+# Initialize components for Routine "enque"
+enqueClock = core.Clock()
+enskill_2 = visual.TextBox2(
+     win, text='Please rate your english reading skill on 0-5.', font='Open Sans',
+     pos=(0, 0),     letterHeight=0.1,
+     size=None, borderWidth=2.0,
+     color='white', colorSpace='rgb',
+     opacity=None,
+     bold=False, italic=False,
+     lineSpacing=1.0,
+     padding=None,
+     anchor='center',
+     fillColor=None, borderColor=None,
+     flipHoriz=False, flipVert=False,
+     editable=True,
+     name='enskill_2',
+     autoLog=True,
+)
+enrespskill_2 = keyboard.Keyboard()
 
 # Initialize components for Routine "thanks"
 thanksClock = core.Clock()
@@ -514,14 +554,6 @@ for thisEnwarmuptrial in enwarmuptrials:
             enwarmupw1.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(enwarmupw1, 'tStartRefresh')  # time at next scr refresh
             enwarmupw1.setAutoDraw(True)
-        if enwarmupw1.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > enwarmupw1.tStartRefresh + 0.8-frameTolerance:
-                # keep track of stop time/frame for later
-                enwarmupw1.tStop = t  # not accounting for scr refresh
-                enwarmupw1.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(enwarmupw1, 'tStopRefresh')  # time at next scr refresh
-                enwarmupw1.setAutoDraw(False)
         
         # *enwarmupw2* updates
         if enwarmupw2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -531,14 +563,6 @@ for thisEnwarmuptrial in enwarmuptrials:
             enwarmupw2.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(enwarmupw2, 'tStartRefresh')  # time at next scr refresh
             enwarmupw2.setAutoDraw(True)
-        if enwarmupw2.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > enwarmupw2.tStartRefresh + 0.8-frameTolerance:
-                # keep track of stop time/frame for later
-                enwarmupw2.tStop = t  # not accounting for scr refresh
-                enwarmupw2.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(enwarmupw2, 'tStopRefresh')  # time at next scr refresh
-                enwarmupw2.setAutoDraw(False)
         
         # *enwarmupkb* updates
         waitOnFlip = False
@@ -952,14 +976,6 @@ for thisEn_trial in en_trials:
             entrialw1.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(entrialw1, 'tStartRefresh')  # time at next scr refresh
             entrialw1.setAutoDraw(True)
-        if entrialw1.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > entrialw1.tStartRefresh + 0.8-frameTolerance:
-                # keep track of stop time/frame for later
-                entrialw1.tStop = t  # not accounting for scr refresh
-                entrialw1.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(entrialw1, 'tStopRefresh')  # time at next scr refresh
-                entrialw1.setAutoDraw(False)
         
         # *entrialw2* updates
         if entrialw2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -969,14 +985,6 @@ for thisEn_trial in en_trials:
             entrialw2.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(entrialw2, 'tStartRefresh')  # time at next scr refresh
             entrialw2.setAutoDraw(True)
-        if entrialw2.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > entrialw2.tStartRefresh + 0.8-frameTolerance:
-                # keep track of stop time/frame for later
-                entrialw2.tStop = t  # not accounting for scr refresh
-                entrialw2.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(entrialw2, 'tStopRefresh')  # time at next scr refresh
-                entrialw2.setAutoDraw(False)
         
         # *enkbresp* updates
         waitOnFlip = False
@@ -1310,14 +1318,6 @@ for thisHiwarmuptrial in hiwarmuptrials:
             hiwarmupw1.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(hiwarmupw1, 'tStartRefresh')  # time at next scr refresh
             hiwarmupw1.setAutoDraw(True)
-        if hiwarmupw1.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > hiwarmupw1.tStartRefresh + 0.8-frameTolerance:
-                # keep track of stop time/frame for later
-                hiwarmupw1.tStop = t  # not accounting for scr refresh
-                hiwarmupw1.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(hiwarmupw1, 'tStopRefresh')  # time at next scr refresh
-                hiwarmupw1.setAutoDraw(False)
         
         # *hiwarmupw2* updates
         if hiwarmupw2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -1327,14 +1327,6 @@ for thisHiwarmuptrial in hiwarmuptrials:
             hiwarmupw2.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(hiwarmupw2, 'tStartRefresh')  # time at next scr refresh
             hiwarmupw2.setAutoDraw(True)
-        if hiwarmupw2.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > hiwarmupw2.tStartRefresh + 0.8-frameTolerance:
-                # keep track of stop time/frame for later
-                hiwarmupw2.tStop = t  # not accounting for scr refresh
-                hiwarmupw2.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(hiwarmupw2, 'tStopRefresh')  # time at next scr refresh
-                hiwarmupw2.setAutoDraw(False)
         
         # *hiwarmupkb* updates
         waitOnFlip = False
@@ -1656,14 +1648,6 @@ for thisHi_trial in hi_trials:
             hitrialw1.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(hitrialw1, 'tStartRefresh')  # time at next scr refresh
             hitrialw1.setAutoDraw(True)
-        if hitrialw1.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > hitrialw1.tStartRefresh + 0.8-frameTolerance:
-                # keep track of stop time/frame for later
-                hitrialw1.tStop = t  # not accounting for scr refresh
-                hitrialw1.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(hitrialw1, 'tStopRefresh')  # time at next scr refresh
-                hitrialw1.setAutoDraw(False)
         
         # *hitrialw2* updates
         if hitrialw2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
@@ -1673,14 +1657,6 @@ for thisHi_trial in hi_trials:
             hitrialw2.tStartRefresh = tThisFlipGlobal  # on global time
             win.timeOnFlip(hitrialw2, 'tStartRefresh')  # time at next scr refresh
             hitrialw2.setAutoDraw(True)
-        if hitrialw2.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > hitrialw2.tStartRefresh + 0.8-frameTolerance:
-                # keep track of stop time/frame for later
-                hitrialw2.tStop = t  # not accounting for scr refresh
-                hitrialw2.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(hitrialw2, 'tStopRefresh')  # time at next scr refresh
-                hitrialw2.setAutoDraw(False)
         
         # *hikbresp* updates
         waitOnFlip = False
@@ -1846,6 +1822,202 @@ for thisHi_trial in hi_trials:
     
 # completed 1.0 repeats of 'hi_trials'
 
+
+# ------Prepare to start Routine "hique"-------
+continueRoutine = True
+# update component parameters for each repeat
+hirespskill.keys = []
+hirespskill.rt = []
+_hirespskill_allKeys = []
+# keep track of which components have finished
+hiqueComponents = [hiskill, hirespskill]
+for thisComponent in hiqueComponents:
+    thisComponent.tStart = None
+    thisComponent.tStop = None
+    thisComponent.tStartRefresh = None
+    thisComponent.tStopRefresh = None
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+# reset timers
+t = 0
+_timeToFirstFrame = win.getFutureFlipTime(clock="now")
+hiqueClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+frameN = -1
+
+# -------Run Routine "hique"-------
+while continueRoutine:
+    # get current time
+    t = hiqueClock.getTime()
+    tThisFlip = win.getFutureFlipTime(clock=hiqueClock)
+    tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *hiskill* updates
+    if hiskill.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        hiskill.frameNStart = frameN  # exact frame index
+        hiskill.tStart = t  # local t and not account for scr refresh
+        hiskill.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(hiskill, 'tStartRefresh')  # time at next scr refresh
+        hiskill.setAutoDraw(True)
+    
+    # *hirespskill* updates
+    waitOnFlip = False
+    if hirespskill.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        hirespskill.frameNStart = frameN  # exact frame index
+        hirespskill.tStart = t  # local t and not account for scr refresh
+        hirespskill.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(hirespskill, 'tStartRefresh')  # time at next scr refresh
+        hirespskill.status = STARTED
+        # keyboard checking is just starting
+        waitOnFlip = True
+        win.callOnFlip(hirespskill.clock.reset)  # t=0 on next screen flip
+        win.callOnFlip(hirespskill.clearEvents, eventType='keyboard')  # clear events on next screen flip
+    if hirespskill.status == STARTED and not waitOnFlip:
+        theseKeys = hirespskill.getKeys(keyList=['0', '1', '2', '3', '4', '5'], waitRelease=False)
+        _hirespskill_allKeys.extend(theseKeys)
+        if len(_hirespskill_allKeys):
+            hirespskill.keys = _hirespskill_allKeys[-1].name  # just the last key pressed
+            hirespskill.rt = _hirespskill_allKeys[-1].rt
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in hiqueComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "hique"-------
+for thisComponent in hiqueComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+thisExp.addData('hiskill.text',hiskill.text)
+hiskill.reset()
+thisExp.addData('hiskill.started', hiskill.tStartRefresh)
+thisExp.addData('hiskill.stopped', hiskill.tStopRefresh)
+# check responses
+if hirespskill.keys in ['', [], None]:  # No response was made
+    hirespskill.keys = None
+thisExp.addData('hirespskill.keys',hirespskill.keys)
+if hirespskill.keys != None:  # we had a response
+    thisExp.addData('hirespskill.rt', hirespskill.rt)
+thisExp.addData('hirespskill.started', hirespskill.tStartRefresh)
+thisExp.addData('hirespskill.stopped', hirespskill.tStopRefresh)
+thisExp.nextEntry()
+# the Routine "hique" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+# ------Prepare to start Routine "enque"-------
+continueRoutine = True
+# update component parameters for each repeat
+enrespskill_2.keys = []
+enrespskill_2.rt = []
+_enrespskill_2_allKeys = []
+# keep track of which components have finished
+enqueComponents = [enskill_2, enrespskill_2]
+for thisComponent in enqueComponents:
+    thisComponent.tStart = None
+    thisComponent.tStop = None
+    thisComponent.tStartRefresh = None
+    thisComponent.tStopRefresh = None
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+# reset timers
+t = 0
+_timeToFirstFrame = win.getFutureFlipTime(clock="now")
+enqueClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
+frameN = -1
+
+# -------Run Routine "enque"-------
+while continueRoutine:
+    # get current time
+    t = enqueClock.getTime()
+    tThisFlip = win.getFutureFlipTime(clock=enqueClock)
+    tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *enskill_2* updates
+    if enskill_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        enskill_2.frameNStart = frameN  # exact frame index
+        enskill_2.tStart = t  # local t and not account for scr refresh
+        enskill_2.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(enskill_2, 'tStartRefresh')  # time at next scr refresh
+        enskill_2.setAutoDraw(True)
+    
+    # *enrespskill_2* updates
+    waitOnFlip = False
+    if enrespskill_2.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+        # keep track of start time/frame for later
+        enrespskill_2.frameNStart = frameN  # exact frame index
+        enrespskill_2.tStart = t  # local t and not account for scr refresh
+        enrespskill_2.tStartRefresh = tThisFlipGlobal  # on global time
+        win.timeOnFlip(enrespskill_2, 'tStartRefresh')  # time at next scr refresh
+        enrespskill_2.status = STARTED
+        # keyboard checking is just starting
+        waitOnFlip = True
+        win.callOnFlip(enrespskill_2.clock.reset)  # t=0 on next screen flip
+        win.callOnFlip(enrespskill_2.clearEvents, eventType='keyboard')  # clear events on next screen flip
+    if enrespskill_2.status == STARTED and not waitOnFlip:
+        theseKeys = enrespskill_2.getKeys(keyList=['0', '1', '2', '3', '4', '5'], waitRelease=False)
+        _enrespskill_2_allKeys.extend(theseKeys)
+        if len(_enrespskill_2_allKeys):
+            enrespskill_2.keys = _enrespskill_2_allKeys[-1].name  # just the last key pressed
+            enrespskill_2.rt = _enrespskill_2_allKeys[-1].rt
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in enqueComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "enque"-------
+for thisComponent in enqueComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+thisExp.addData('enskill_2.text',enskill_2.text)
+enskill_2.reset()
+thisExp.addData('enskill_2.started', enskill_2.tStartRefresh)
+thisExp.addData('enskill_2.stopped', enskill_2.tStopRefresh)
+# check responses
+if enrespskill_2.keys in ['', [], None]:  # No response was made
+    enrespskill_2.keys = None
+thisExp.addData('enrespskill_2.keys',enrespskill_2.keys)
+if enrespskill_2.keys != None:  # we had a response
+    thisExp.addData('enrespskill_2.rt', enrespskill_2.rt)
+thisExp.addData('enrespskill_2.started', enrespskill_2.tStartRefresh)
+thisExp.addData('enrespskill_2.stopped', enrespskill_2.tStopRefresh)
+thisExp.nextEntry()
+# the Routine "enque" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
 
 # ------Prepare to start Routine "thanks"-------
 continueRoutine = True
