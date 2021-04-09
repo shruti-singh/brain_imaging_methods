@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2021.1.3),
-    on Fri 09 Apr 2021 12:41:02 PM IST
+    on Fri 09 Apr 2021 12:51:31 PM IST
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -636,7 +636,7 @@ for thisEnwarmuptrial in enwarmuptrials:
     
     # ------Prepare to start Routine "rest"-------
     continueRoutine = True
-    routineTimer.add(1.000000)
+    routineTimer.add(0.500000)
     # update component parameters for each repeat
     restresp.keys = []
     restresp.rt = []
@@ -680,7 +680,7 @@ for thisEnwarmuptrial in enwarmuptrials:
             win.callOnFlip(restresp.clearEvents, eventType='keyboard')  # clear events on next screen flip
         if restresp.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > restresp.tStartRefresh + 1.0-frameTolerance:
+            if tThisFlipGlobal > restresp.tStartRefresh + 0.5-frameTolerance:
                 # keep track of stop time/frame for later
                 restresp.tStop = t  # not accounting for scr refresh
                 restresp.frameNStop = frameN  # exact frame index
@@ -827,7 +827,7 @@ routineTimer.reset()
 
 # ------Prepare to start Routine "rest"-------
 continueRoutine = True
-routineTimer.add(1.000000)
+routineTimer.add(0.500000)
 # update component parameters for each repeat
 restresp.keys = []
 restresp.rt = []
@@ -871,7 +871,7 @@ while continueRoutine and routineTimer.getTime() > 0:
         win.callOnFlip(restresp.clearEvents, eventType='keyboard')  # clear events on next screen flip
     if restresp.status == STARTED:
         # is it time to stop? (based on global clock, using actual start)
-        if tThisFlipGlobal > restresp.tStartRefresh + 1.0-frameTolerance:
+        if tThisFlipGlobal > restresp.tStartRefresh + 0.5-frameTolerance:
             # keep track of stop time/frame for later
             restresp.tStop = t  # not accounting for scr refresh
             restresp.frameNStop = frameN  # exact frame index
@@ -1058,7 +1058,7 @@ for thisEn_trial in en_trials:
     
     # ------Prepare to start Routine "rest"-------
     continueRoutine = True
-    routineTimer.add(1.000000)
+    routineTimer.add(0.500000)
     # update component parameters for each repeat
     restresp.keys = []
     restresp.rt = []
@@ -1102,7 +1102,7 @@ for thisEn_trial in en_trials:
             win.callOnFlip(restresp.clearEvents, eventType='keyboard')  # clear events on next screen flip
         if restresp.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > restresp.tStartRefresh + 1.0-frameTolerance:
+            if tThisFlipGlobal > restresp.tStartRefresh + 0.5-frameTolerance:
                 # keep track of stop time/frame for later
                 restresp.tStop = t  # not accounting for scr refresh
                 restresp.frameNStop = frameN  # exact frame index
@@ -1400,7 +1400,7 @@ for thisHiwarmuptrial in hiwarmuptrials:
     
     # ------Prepare to start Routine "rest"-------
     continueRoutine = True
-    routineTimer.add(1.000000)
+    routineTimer.add(0.500000)
     # update component parameters for each repeat
     restresp.keys = []
     restresp.rt = []
@@ -1444,7 +1444,7 @@ for thisHiwarmuptrial in hiwarmuptrials:
             win.callOnFlip(restresp.clearEvents, eventType='keyboard')  # clear events on next screen flip
         if restresp.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > restresp.tStartRefresh + 1.0-frameTolerance:
+            if tThisFlipGlobal > restresp.tStartRefresh + 0.5-frameTolerance:
                 # keep track of stop time/frame for later
                 restresp.tStop = t  # not accounting for scr refresh
                 restresp.frameNStop = frameN  # exact frame index
@@ -1730,7 +1730,7 @@ for thisHi_trial in hi_trials:
     
     # ------Prepare to start Routine "rest"-------
     continueRoutine = True
-    routineTimer.add(1.000000)
+    routineTimer.add(0.500000)
     # update component parameters for each repeat
     restresp.keys = []
     restresp.rt = []
@@ -1774,7 +1774,7 @@ for thisHi_trial in hi_trials:
             win.callOnFlip(restresp.clearEvents, eventType='keyboard')  # clear events on next screen flip
         if restresp.status == STARTED:
             # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > restresp.tStartRefresh + 1.0-frameTolerance:
+            if tThisFlipGlobal > restresp.tStartRefresh + 0.5-frameTolerance:
                 # keep track of stop time/frame for later
                 restresp.tStop = t  # not accounting for scr refresh
                 restresp.frameNStop = frameN  # exact frame index
