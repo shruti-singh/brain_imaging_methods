@@ -1,5 +1,5 @@
 import numpy as np
-
+import pandas as pd
 
 def replace_vowels(word):
     replacement_map = {'a': 'u', 'e': 'i', 'i': 'a', 'o': 'e', 'u': 'o'}
@@ -50,10 +50,42 @@ def create_en_non_words(word_list):
     return non_words
 
 
-if __name__ == "__main__":
-    en_words = ['accept', 'actor', 'addition', 'africa', 'annoy', 'answer', 'arms', 'arrow', 'beard', 'beer', 'believe', 'bicycle', 'book', 'bored', 'broccoli', 'brother', 'builder', 'cancer', 'carpet', 'chalk', 'clay', 'cook', 'cop', 'crab', 'devil', 'atom', 'attic', 'average', 'ax', 'backpack', 'ballet', 'bar', 'base', 'beat', 'beautiful', 'begin', 'beginner', 'belt', 'bitch', 'blame', 'blanket', 'blow', 'blue', 'blush', 'REJECT', 'ACTRESS', 'SUBTRACTION', 'CONTINENT', 'FRUSTRATE', 'EXPLANATION', 'OCTOPUS', 'BOW', 'MUSTACHE', 'MUG', 'DISBELIEVE', 'TRICYCLE', 'MAGAZINE', 'BUSY', 'CAULIFLOWER', 'SISTER', 'CONTRACTOR', 'TUMOR', 'RUG', 'BLACKBOARD', 'POTTERY', 'KITCHEN', 'POLICEMAN', 'LOBSTER', 'VALUABLE', 'DISOWN', 'CAPABILITY', 'PERFORM', 'ACTOR', 'ADVERB', 'SUGGEST', 'CONTRACT', 'AWARENESS', 'DISALLOW', 'QUANTITY', 'ENTERTAIN', 'FURY', 'ANTEATER', 'SEEM', 'REGION', 'DISAGREEMENT', 'CRICKET', 'ASH', 'INQUIRE']
-    en_non_words = create_en_non_words(en_words)
+def random_hindi_word_perturbation(word):
+    if len(word) <= 4:
+        pos = np.random.randint(1, len(word))
+        word = word[:pos] + word[pos+1:]
+    else:
+        size = len(word)//4
+        for i in range(size):
+            pos = np.random.randint(1, len(word))
+            word = word[:pos] + word[pos+1:]
+    return word
 
-    with open("en_non_words.txt", "w") as f:
-        for i in en_non_words:
-            f.write(i + "\n")
+
+def create_hi_non_words(word_list):
+    non_words = []
+
+    for w in word_list:
+        non_words.append(random_hindi_word_perturbation(w))
+    return non_words
+
+
+if __name__ == "__main__":
+
+    generate_en_nonwords = False
+    if generate_en_nonwords:
+        en_words = ['accept', 'actor', 'addition', 'africa', 'annoy', 'answer', 'arms', 'arrow', 'beard', 'beer', 'believe', 'bicycle', 'book', 'bored', 'broccoli', 'brother', 'builder', 'cancer', 'carpet', 'chalk', 'clay', 'cook', 'cop', 'crab', 'devil', 'atom', 'attic', 'average', 'ax', 'backpack', 'ballet', 'bar', 'base', 'beat', 'beautiful', 'begin', 'beginner', 'belt', 'bitch', 'blame', 'blanket', 'blow', 'blue', 'blush', 'REJECT', 'ACTRESS', 'SUBTRACTION', 'CONTINENT', 'FRUSTRATE', 'EXPLANATION', 'OCTOPUS', 'BOW', 'MUSTACHE', 'MUG', 'DISBELIEVE', 'TRICYCLE', 'MAGAZINE', 'BUSY', 'CAULIFLOWER', 'SISTER', 'CONTRACTOR', 'TUMOR', 'RUG', 'BLACKBOARD', 'POTTERY', 'KITCHEN', 'POLICEMAN', 'LOBSTER', 'VALUABLE', 'DISOWN', 'CAPABILITY', 'PERFORM', 'ACTOR', 'ADVERB', 'SUGGEST', 'CONTRACT', 'AWARENESS', 'DISALLOW', 'QUANTITY', 'ENTERTAIN', 'FURY', 'ANTEATER', 'SEEM', 'REGION', 'DISAGREEMENT', 'CRICKET', 'ASH', 'INQUIRE']
+        en_non_words = create_en_non_words(en_words)
+
+        with open("en_non_words.txt", "w") as f:
+            for i in en_non_words:
+                f.write(i + "\n")
+    else:
+        hi_words = pd.read_excel('dataset/hindiwords.xls')
+        source_words = hi_words['hword'].tolist()
+        hi_non_words = create_hi_non_words(source_words)
+        with open("dataset/hi_non_words.txt", "w") as f:
+            for i in hi_non_words:
+                f.write(i + "\n")
+
+
