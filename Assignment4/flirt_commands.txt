@@ -1,0 +1,24 @@
+1. Using FLIRT co-registration tool to align the mean_func.nii.gz to the structural image:
+
+a. Using Mutual Information cost function
+/usr/local/fsl/bin/flirt -in /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/a4_analysis.feat/mean_func.nii.gz -ref /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/data/fmri1/fsl_course_data/fmri1/fluency_task/structural_brain.nii.gz -out /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_meanfunc_to_struc -omat /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_meanfunc_to_struc.mat -bins 256 -cost mutualinfo -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 12  -interp trilinear
+
+b. Using Correlation Ratio cost function
+/usr/local/fsl/bin/flirt -in /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/a4_analysis.feat/mean_func.nii.gz -ref /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/data/fmri1/fsl_course_data/fmri1/fluency_task/structural_brain.nii.gz -out /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_meanfunc_to_struc_corr -omat /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_meanfunc_to_struc_corr.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 12  -interp trilinear
+
+For both cost functions, we use default parameters.
+We observe that the matrices contain almost similar values for both cost functions. Upon visual inspection using fsleyes, we observe that mutual information leads to better alignment. 
+The affine transformation matrix in FLIRT is constructed as: matrix = rot_matrix * skew_matrix * scale_matrix
+
+
+2. Using FLIRT tool to apply the transformation matrix to thresh_zstat1.nii.gz and thresh_zstat2.nii.gz, to move the activation to the anatomical space. 
+
+a. Using Mutual Information matrix
+/usr/local/fsl/bin/flirt -in /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/a4_analysis.feat/thresh_zstat1.nii.gz -applyxfm -init /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_meanfunc_to_struc.mat -out /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_zthresh1_to_struct -paddingsize 0.0 -interp trilinear -ref /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/data/fmri1/fsl_course_data/fmri1/fluency_task/structural_brain.nii.gz
+
+/usr/local/fsl/bin/flirt -in /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/a4_analysis.feat/thresh_zstat2.nii.gz -applyxfm -init /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_meanfunc_to_struc.mat -out /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_zthresh2_to_struct.nii.gz -paddingsize 0.0 -interp trilinear -ref /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/data/fmri1/fsl_course_data/fmri1/fluency_task/structural_brain.nii.gz
+
+b. Using Correlation Ratio matrix
+/usr/local/fsl/bin/flirt -in /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/a4_analysis.feat/thresh_zstat1.nii.gz -applyxfm -init /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_meanfunc_to_struc_corr.mat -out /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_zthresh1_to_struct_corr.nii.gz -paddingsize 0.0 -interp trilinear -ref /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/data/fmri1/fsl_course_data/fmri1/fluency_task/structural_brain.nii.gz
+ 
+/usr/local/fsl/bin/flirt -in /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/a4_analysis.feat/thresh_zstat2.nii.gz -applyxfm -init /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_meanfunc_to_struc_corr.mat -out /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/out_zthresh2_to_struct_corr -paddingsize 0.0 -interp trilinear -ref /home/shruti/Desktop/iitgn/courses/SEM4/BrainImagingMethods/experiments/brain_imaging_methods/Assignment4/data/fmri1/fsl_course_data/fmri1/fluency_task/structural_brain.nii.gz
